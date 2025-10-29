@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio — Mahasiswa Sistem Informasi</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* Custom small tweaks */
+    :root{
+      --gold: #d4af37;
+      --bg: #0b1220; /* deep dark */
+      --muted: #94a3b8;
+    }
+    .glass{backdrop-filter: blur(6px); background-color: rgba(255,255,255,0.03);}
+    /* Floating blob animation */
+    @keyframes floaty{0%{transform: translateY(0px);}50%{transform: translateY(-10px);}100%{transform: translateY(0px);}}
+    .floaty{animation: floaty 6s ease-in-out infinite}
+  </style>
+</head>
+<body class="antialiased text-slate-100 bg-gradient-to-b from-[#03040b] to-[#071127]">
+  <!-- Page container -->
+  <div class="min-h-screen flex flex-col">
+    <!-- NAVBAR -->
+    <header class="fixed w-full z-40 top-0 glass border-b border-slate-800">
+     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+  <a href="foto1.png" class="flex items-center gap-3">
+    <!-- Foto profil dalam lingkaran -->
+    <div class="w-10 h-10 rounded-full flex items-center justify-center border border-[#d4af37] overflow-hidden bg-gradient-to-br from-[#b8860b33] to-[#d4af3711]">
+      <img src="foto1.png" alt="Foto Ajeng Paramitha" class="w-full h-full object-cover" />
+    </div>
+
+    <div class="hidden sm:block">
+      <p class="text-sm font-semibold text-slate-100">Ajeng Paramitha</p>
+      <p class="text-xs text-slate-400">Mahasiswa Sistem Informasi</p>
+    </div>
+  </a>
+
+  <!-- Navbar -->
+  <nav class="hidden md:flex gap-6 items-center text-sm">
+    <a href="#about" class="hover:text-[#d4af37] transition">About</a>
+    <a href="#skills" class="hover:text-[#d4af37] transition">Skills</a>
+    <a href="#projects" class="hover:text-[#d4af37] transition">Projects</a>
+    <a href="#contact" class="hover:text-[#d4af37] transition">Contact</a>
+    <a href="CV_Ajeng Paramitha Juman Lovista.pdf" class="px-4 py-2 rounded-md border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37]/10 transition">Download CV</a>
+  </nav>
+
+  <!-- Tombol Menu Mobile -->
+  <div class="md:hidden">
+    <button id="menuBtn" class="p-2 rounded-md border border-slate-700">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+      <!-- mobile menu -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800">
+        <div class="px-6 py-4 flex flex-col gap-3">
+          <a href="#about" class="py-2">About</a>
+          <a href="#skills" class="py-2">Skills</a>
+          <a href="#projects" class="py-2">Projects</a>
+          <a href="#contact" class="py-2">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="flex-1 pt-24">
+      <section id="hero" class="max-w-6xl mx-auto px-6 py-16 md:py-28 flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1" data-aos="fade-right">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+            Halo, Saya
+            <span class="block text-[#d4af37]">Ajeng Paramitha Juman Lovista</span>
+          </h1>
+          <p class="mt-4 text-slate-300 max-w-xl">Mahasiswa Sistem Informasi — Mencampurkan kreativitas desain dan logika pemrograman untuk menciptakan solusi digital yang menarik dan berguna.</p>
+
+          <div class="mt-6 flex gap-4">
+            <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-gradient-to-r from-[#d4af37] to-[#b8860b] text-black font-semibold shadow-lg hover:scale-[1.02] transition-transform">Lihat Proyek</a>
+            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-slate-700 text-slate-200 hover:border-[#d4af37] transition">Kontak</a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-slate-400">
+            <div class="flex flex-col">
+              <span class="text-slate-200 font-semibold">Lokasi</span>
+              <span>Semarang, Indonesia</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-slate-200 font-semibold">Email</span>
+              <span>paramithaajeng7@gmail.com </span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-slate-200 font-semibold">Status</span>
+              <span>Mahasiswa — Universitas Dian Nuswantoro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROFILE CARD -->
+        <div class="w-full md:w-96 p-4 glass rounded-2xl border border-slate-800 relative" data-aos="fade-left">
+          <div class="absolute -top-8 -right-8 w-36 h-36 rounded-full blur-3xl opacity-30" style="background:linear-gradient(135deg, rgba(212,175,55,0.12), rgba(168,125,20,0.06))"></div>
+          <div class="flex flex-col items-center text-center">
+            <!-- Replace src with your profile image -->
+            <div class="w-36 h-36 rounded-full overflow-hidden border-2 border-[#d4af37] floaty">
+              <img src="foto1.png" alt="Profile" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="mt-4 text-xl font-semibold">Ajeng Paramitha Juman Lovista</h3>
+            <p class="text-sm text-slate-400">Mahasiswa Sistem Informasi — UI/UX & Web Developer</p>
+
+            <div class="mt-4 flex gap-3">
+              <a href="https://wa.me/6281215468897" class="p-2 rounded-full border border-slate-700 hover:bg-[#d4af37]/10"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></a>
+              <a href="#contact" class="p-2 rounded-full border border-slate-700 hover:bg-[#d4af37]/10"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM8.59 16.59L6.17 14.17 7.59 12.75 10 15.17l6.41-6.41L18.83 11.6z"/></svg></a>
+            </div>
+
+            <div class="mt-6 w-full text-left">
+              <p class="text-xs text-slate-400">Sedikit tentang saya: Saya tertarik pada kombinasi desain dan pengembangan — membangun antarmuka yang estetis dan fungsional.</p>
+              <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
+                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#d4af37]"></span><span>UI/UX</span></div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#d4af37]"></span><span>Web Dev</span></div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#d4af37]"></span><span>Graphic Design</span></div>
+                <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#d4af37]"></span><span>Logo Design</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="max-w-6xl mx-auto px-6 py-16" data-aos="fade-up">
+        <div class="grid md:grid-cols-3 gap-8 items-center">
+          <div class="md:col-span-2">
+            <h2 class="text-3xl font-bold">About Me</h2>
+            <p class="mt-4 text-slate-300">Saya adalah Mahasiswa Sistem Informasi di Universitas Dian Nuswantoro. Saya suka menggabungkan estetika visual dengan logika pemrograman untuk membuat aplikasi dan desain yang berdampak.</p>
+
+            <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-300">
+              <li class="flex items-start gap-3"><span class="text-[#d4af37] mt-1">•</span> Passionate about UI/UX & Web Development</li>
+              <li class="flex items-start gap-3"><span class="text-[#d4af37] mt-1">•</span> Familiar with HTML, CSS, JavaScript, PHP</li>
+              <li class="flex items-start gap-3"><span class="text-[#d4af37] mt-1">•</span> Skilled in Adobe Illustrator & Figma</li>
+              <li class="flex items-start gap-3"><span class="text-[#d4af37] mt-1">•</span> Experience in hotel service & culinary (casual)</li>
+            </ul>
+
+            <div class="mt-6 flex gap-3">
+              <a href="#projects" class="px-4 py-2 rounded-md bg-[#d4af37] text-black font-medium">Lihat Portofolio</a>
+              <a href="#contact" class="px-4 py-2 rounded-md border border-slate-700">Hire Me</a>
+            </div>
+          </div>
+
+          <div class="md:col-span-1">
+            <div class="p-5 glass rounded-2xl border border-slate-800">
+              <h3 class="font-semibold">Education</h3>
+              <p class="text-sm text-slate-400 mt-2">S1 Sistem Informasi — Universitas Dian Nuswantoro</p>
+              <div class="mt-4">
+                <h4 class="text-xs text-slate-400 uppercase">Interests</h4>
+                <div class="mt-2 flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-full text-xs bg-white/5">UI/UX</span>
+                  <span class="px-3 py-1 rounded-full text-xs bg-white/5">Web Dev</span>
+                  <span class="px-3 py-1 rounded-full text-xs bg-white/5">Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="max-w-6xl mx-auto px-6 py-12" data-aos="fade-up">
+        <h2 class="text-2xl font-bold">Skills</h2>
+        <p class="text-slate-400 mt-2">Keterampilan teknis & desain yang sering saya gunakan.</p>
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Skill card -->
+          <div class="p-4 glass rounded-xl border border-slate-800">
+            <h3 class="font-semibold">HTML & CSS</h3>
+            <div class="mt-2 h-3 bg-slate-700 rounded-full overflow-hidden">
+              <div class="h-3 rounded-full" style="width:90%; background:linear-gradient(90deg,var(--gold),#b8860b)"></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-2">Pengalaman membuat layout responsif modern.</p>
+          </div>
+
+          <div class="p-4 glass rounded-xl border border-slate-800">
+            <h3 class="font-semibold">JavaScript</h3>
+            <div class="mt-2 h-3 bg-slate-700 rounded-full overflow-hidden">
+              <div class="h-3 rounded-full" style="width:80%; background:linear-gradient(90deg,var(--gold),#b8860b)"></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-2">Manipulasi DOM, interaksi, animasi sederhana.</p>
+          </div>
+
+          <div class="p-4 glass rounded-xl border border-slate-800">
+            <h3 class="font-semibold">Figma & Adobe</h3>
+            <div class="mt-2 h-3 bg-slate-700 rounded-full overflow-hidden">
+              <div class="h-3 rounded-full" style="width:88%; background:linear-gradient(90deg,var(--gold),#b8860b)"></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-2">Prototyping & graphic design.</p>
+          </div>
+
+          <div class="p-4 glass rounded-xl border border-slate-800">
+            <h3 class="font-semibold">PHP & MySQL</h3>
+            <div class="mt-2 h-3 bg-slate-700 rounded-full overflow-hidden">
+              <div class="h-3 rounded-full" style="width:70%; background:linear-gradient(90deg,var(--gold),#b8860b)"></div>
+            </div>
+            <p class="text-xs text-slate-400 mt-2">Dasar backend untuk sistem sederhana.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS / PORTFOLIO -->
+<section id="projects" class="max-w-6xl mx-auto px-6 py-16" data-aos="fade-up">
+  <h2 class="text-2xl font-bold">My Projects</h2>
+  <p class="text-slate-400 mt-2">
+    Klik gambar untuk melihat detail untuk Melihat Project Saya
+  </p>
+
+  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Project item 1 -->
+    <div class="rounded-2xl overflow-hidden border border-slate-800 glass group hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
+      <div class="relative">
+        <img src="project1.png" alt="Project 1"
+          class="w-full h-56 object-cover transition-transform group-hover:scale-105" />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+        </div>
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold">Project Title 1</h3>
+        <p class="text-xs text-slate-400 mt-2">Deskripsi singkat proyek — apa yang kamu kerjakan.</p>
+        <div class="mt-3 flex gap-2 text-xs">
+          <span class="px-2 py-1 rounded-full bg-white/5">Prototype</span>
+          <span class="px-2 py-1 rounded-full bg-white/5">UI/UX</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project item 2 -->
+    <div class="rounded-2xl overflow-hidden border border-slate-800 glass group hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
+      <div class="relative">
+        <img src="project2.png" alt="Project 2"
+          class="w-full h-56 object-cover transition-transform group-hover:scale-105" />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+        </div>
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold">Project Title 2</h3>
+        <p class="text-xs text-slate-400 mt-2">Deskripsi singkat proyek.</p>
+        <div class="mt-3 flex gap-2 text-xs">
+          <span class="px-2 py-1 rounded-full bg-white/5">Prototype</span>
+          <span class="px-2 py-1 rounded-full bg-white/5">UI/UX</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project item 3 -->
+    <div class="rounded-2xl overflow-hidden border border-slate-800 glass group hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
+      <div class="relative">
+        <img src="project3.png" alt="Project 3"
+          class="w-full h-56 object-cover transition-transform group-hover:scale-105" />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+        </div>
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold">Project Title 3</h3>
+        <p class="text-xs text-slate-400 mt-2">Deskripsi singkat proyek.</p>
+        <div class="mt-3 flex gap-2 text-xs">
+          <span class="px-2 py-1 rounded-full bg-white/5">Data</span>
+          <span class="px-2 py-1 rounded-full bg-white/5">MySQL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project item 4 -->
+    <div class="rounded-2xl overflow-hidden border border-slate-800 glass group hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
+      <div class="relative">
+        <img src="project4.png" alt="Project 4"
+          class="w-full h-56 object-cover transition-transform group-hover:scale-105" />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+        </div>
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold">Project Title 4</h3>
+        <p class="text-xs text-slate-400 mt-2">Deskripsi singkat proyek menarik lainnya.</p>
+        <div class="mt-3 flex gap-2 text-xs">
+          <span class="px-2 py-1 rounded-full bg-white/5">Logo</span>
+          <span class="px-2 py-1 rounded-full bg-white/5">Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project item 5 -->
+    <div class="rounded-2xl overflow-hidden border border-slate-800 glass group hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
+      <div class="relative">
+        <img src="project5.png" alt="Project 5"
+          class="w-full h-56 object-cover transition-transform group-hover:scale-105" />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+        </div>
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold">Project Title 5</h3>
+        <p class="text-xs text-slate-400 mt-2">Deskripsi singkat proyek dengan efek hover elegan.</p>
+        <div class="mt-3 flex gap-2 text-xs">
+          <span class="px-2 py-1 rounded-full bg-white/5">Logo</span>
+          <span class="px-2 py-1 rounded-full bg-white/5">Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project item 6 -->
+    <div class="rounded-2xl overflow-hidden border border-slate-800 glass group hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300">
+      <div class="relative">
+        <img src="project6.jpeg" alt="Project 6"
+          class="w-full h-56 object-cover transition-transform group-hover:scale-105" />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+        </div>
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold">Project Title 6</h3>
+        <p class="text-xs text-slate-400 mt-2">Proyek kreatif lainnya dengan nuansa emas elegan.</p>
+        <div class="mt-3 flex gap-2 text-xs">
+          <span class="px-2 py-1 rounded-full bg-white/5">Brand</span>
+          <span class="px-2 py-1 rounded-full bg-white/5">Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <!-- CONTACT -->
+      <section id="contact" class="max-w-6xl mx-auto px-6 py-16" data-aos="fade-up">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h2 class="text-2xl font-bold">Get in touch</h2>
+            <p class="text-slate-400 mt-2">Punya proyek atau mau kolaborasi? Isi formulir ini atau hubungi via email / sosial media.</p>
+
+            <div class="mt-6 glass rounded-2xl p-6 border border-slate-800">
+              <form id="contactForm" class="flex flex-col gap-3">
+                <input type="text" name="name" placeholder="Nama" class="p-3 rounded-md bg-transparent border border-slate-700" required>
+                <input type="email" name="email" placeholder="Email" class="p-3 rounded-md bg-transparent border border-slate-700" required>
+                <input type="text" name="subject" placeholder="Subjek" class="p-3 rounded-md bg-transparent border border-slate-700">
+                <textarea name="message" rows="5" placeholder="Pesan" class="p-3 rounded-md bg-transparent border border-slate-700" required></textarea>
+                <div class="flex items-center gap-3">
+                  <button type="submit" class="px-5 py-3 rounded-xl bg-[#d4af37] text-black font-semibold">Kirim Pesan</button>
+                  <span id="formMsg" class="text-sm text-slate-400"></span>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+          <div>
+            <div class="p-6 glass rounded-2xl border border-slate-800">
+              <h3 class="font-semibold">Contact Info</h3>
+              <p class="text-slate-400 mt-2">Email: paramithaajeng7@gmail.com </p>
+              <p class="text-slate-400">Telepon: +62 812 1546 8897</p>
+
+              <div class="mt-6">
+                <h4 class="text-xs text-slate-400 uppercase">Social Media</h4>
+                <div class="mt-2 flex gap-3">
+                  <a href="https://www.tiktok.com/@ardvilove?_t=ZS-90xBxEs93Qa&_r=1" class="px-3 py-1 rounded-md bg-white/5">Tiktok</a>
+                  <a href="https://instagram.com/adbartaflao" class="px-3 py-1 rounded-md bg-white/5">Instagram</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 p-6 rounded-2xl border border-slate-800 glass">
+                <h4 class="font-semibold">Location</h4>
+                    <p class="text-slate-400 text-sm mt-2">Semarang, Indonesia</p>
+
+  <!-- Google Maps Embed -->
+            <div class="mt-3 w-full h-40 rounded-md overflow-hidden border border-slate-700">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.4379977202467!2d110.42000747499509!3d-6.990398994944575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b53c249a6fb%3A0xa6bde9c7b304c112!2sSemarang%2C%20Central%20Java!5e0!3m2!1sen!2sid!4v1697992994000!5m2!1sen!2sid"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="mt-auto border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-slate-400">© 2025 Ajeng Paramitha — Mahasiswa Sistem Informasi, Universitas Dian Nuswantoro</p>
+          <div class="flex gap-3">
+            <a href="#" class="text-slate-400 hover:text-[#d4af37]">Privacy</a>
+            <a href="#" class="text-slate-400 hover:text-[#d4af37]">Terms</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:800, once:true});
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', ()=>{ mobileMenu.classList.toggle('hidden'); });
+
+    // Contact form: demo client-side handler (no backend) — replace with your API endpoint
+    const form = document.getElementById('contactForm');
+    const formMsg = document.getElementById('formMsg');
+    form?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      formMsg.textContent = 'Pesan berhasil (demo).';
+      formMsg.classList.add('text-green-400');
+      setTimeout(()=>{ formMsg.textContent = ''; form.reset(); }, 2500);
+    });
+  </script>
+</body>
+</html>
